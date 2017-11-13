@@ -1,8 +1,8 @@
-// var board = [
-//   null, null, null,
-//   null, null, null,
-//   null, null, null
-// ];
+var board = [
+  null, null, null,
+  null, null, null,
+  null, null, null
+];
 
 var isWinner = player => {
   var count = 0;
@@ -41,9 +41,20 @@ var isWinner = player => {
   return false;
 };
 
-var board = [
-  ['X', 'O', 'O'],
-  ['X', 'X', 'O'],
-  ['O', 'X', 'X']
-];
+var makeMove(player, coordinates) {
 
+}
+
+var play = function() {
+  var playerX = 'X';
+  var playerO = 'O';
+
+  currentPlayer = playerX;
+  moveCount = 0;
+
+  while (!(isWinner('X') || isWinner('O')) && moveCount < 9) {
+    makeMove(currentPlayer);
+    currentPlayer = currentPlayer === playerX ? playerY : playerX;
+    moveCount++;
+  }
+}
